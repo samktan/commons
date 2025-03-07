@@ -1,6 +1,10 @@
 # set default locale settings
-export LANG=C
+typeset +x LANG=C
 
+# set prompt
+typeset +x PS1="\u@\h:\w\\$ "
+
+# check for OWAN proxy server
 check_proxy () {
 	# detect and set proxy server settings
 	PROXYHOST="www-proxy.us.oracle.com"
@@ -24,7 +28,7 @@ check_proxy () {
 }
 check_proxy
 
-# add Sam's common utilities
+# add common utilities
 if [ -d $HOME/commons/bin ]; then
 	alias ssh=$HOME/commons/bin/sssh
 	export PATH=$HOME/commons/bin:$PATH
