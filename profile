@@ -17,13 +17,11 @@ check_proxy () {
 		echo "Proxy server ${PROXYHOST} not reachable."
 		unset http_proxy
 		unset https_proxy
-		unset all_proxy
 	else
 		echo "Setting proxy server ..."
 		export http_proxy="http://${PROXYHOST}:${PROXYPORT}"
 		export https_proxy=$http_proxy
-		export all_proxy=$http_proxy
-		export no_proxy=".oracle.com,.oraclecorp.com"
+		export no_proxy=".oracle.com,.oraclecorp.com,identity.oraclecloud.com"
 	fi
 }
 check_proxy
