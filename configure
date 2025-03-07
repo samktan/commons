@@ -3,12 +3,14 @@ create_link () {
 	s=$1
 	d=$2
 	if [ -f $d ]; then
-		printf "File $d exists, replace? (Y/N)?"; read r
+		printf "File $d exists, YES to replace, else to skip?"; read r
 		if [ "xxx${r}xxx" != "xxxYxxx" ]; then
 			return
 		fi
+		echo "Removing $d ..."
 		rm $d
 	fi
+	echo "Creating link $s ..."
 	ln -s $s $d
 }
 
