@@ -29,13 +29,11 @@ check_proxy () {
 check_proxy
 
 # add common utilities
-if [ -d $HOME/commons/bin ]; then
-	alias ssh=$HOME/commons/bin/sssh
-	export PATH=$HOME/commons/bin:$PATH
-fi
+[ -d $HOME/commons/bin ] && export PATH=$HOME/commons/bin:$PATH
+[ -x $HOME/commons/bin/sssh ] && alias ssh=$HOME/commons/bin/sssh
 
 # enable homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+[ -d /opt/homebrew/bin ] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # configuration settings for OCI CLI
 # export no_proxy=".skt-pca-9.au.oracle.com,$no_proxy"
