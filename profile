@@ -1,8 +1,10 @@
 # set default locale settings
-typeset +x LANG=C
+export LANG=C
+export EDITOR="vi -e"
+export VISUAL="vi"
 
 # set prompt
-typeset +x PS1="\u@\h:\w\\$ "
+export PS1="\u@\h:\w\\$ "
 
 # check for OWAN proxy server
 check_proxy () {
