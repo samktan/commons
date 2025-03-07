@@ -1,0 +1,21 @@
+
+create_link () {
+	s=$1
+	d=$2
+	if [ -f $d ]; then
+		printf "File $d exists, replace? (Y/N)?"; read r
+		if [ "xxx${r}xxx" != "xxxYxxx" ]; then
+			return
+		fi
+		rm $d
+	fi
+	ln -s $s $d
+}
+
+
+CMD_PATH=$(realpath $0)
+CMD_DIR=$(dirname ${CMD_PATH})
+
+create_link $CMD_DIR/profile $HOME/.profile
+create_link $CMD_DIR/profile $HOME/.zprofile
+
