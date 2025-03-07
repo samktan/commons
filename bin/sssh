@@ -11,7 +11,7 @@ SSH=$(which ssh)
 SSHKEYGEN=$(which ssh-keygen)
 SSSH="::::"
 
-echo "${SSSH} Sam's SSH by sam.k.tan@oracle.com"
+echo "${SSSH} SSH Wrapper by sam.k.tan@oracle.com"
 
 # run SSH with the given parameters
 ${SSH} ${PARAMS}
