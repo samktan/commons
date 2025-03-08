@@ -47,6 +47,4 @@ fi
 # export no_proxy=".skt-pca-9.au.oracle.com,$no_proxy"
 [ -f $HOME/.oci/ca.cert ] && export OCI_CLI_CERT_BUNDLER=$HOME/.oci/ca.cert && export REQUESTS_CA_BUNDLE=$OCI_CLI_CERT_BUNDLE
 
-# return to user home directory
-cd $HOME
 
