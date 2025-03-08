@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 
 # Use GNU date command
 DATECMD="/usr/gnu/bin/date"

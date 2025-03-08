@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/bash
 
 [ -z $1 ] &&  echo "${0##*/} <file to upload>" && exit 1
 p=$(realpath "$1")
