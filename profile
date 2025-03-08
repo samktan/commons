@@ -38,12 +38,16 @@ check_proxy
 # configure git
 GIT=$(which git)
 if [ ! -z "$GIT" ] && [ -x "$GIT" ]; then
-	$GIT config --global user.name="samktan"
-	$GIT config --global user.email="samktan@gmail.com"
+	$GIT config --global user.name "samktan"
+	$GIT config --global user.email "samktan@gmail.com"
 	$GIT config --global credential.helper store
+	[ -d $HOME/commons ] && cd $HOME/commons && $GIT status
 fi
 
 # configuration settings for OCI CLI
 # export no_proxy=".skt-pca-9.au.oracle.com,$no_proxy"
 [ -f $HOME/.oci/ca.cert ] && export OCI_CLI_CERT_BUNDLER=$HOME/.oci/ca.cert && export REQUESTS_CA_BUNDLE=$OCI_CLI_CERT_BUNDLE
+
+# return to user home directory
+cd $HOME
 

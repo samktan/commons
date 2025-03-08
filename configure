@@ -3,8 +3,9 @@ create_link () {
 	s=$1
 	d=$2
 	if [ -f $d ]; then
-		printf "File $d exists, YES to replace, else to skip?"; read r
-		if [ "xxx${r}xxx" != "xxxYxxx" ]; then
+		printf "File $d exists, YES to replace, else to skip? "; read r
+		if [ "xxx${r}xxx" != "xxxYESxxx" ]; then
+			echo "Skipping $d ..."
 			return
 		fi
 		echo "Removing $d ..."
