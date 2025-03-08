@@ -41,7 +41,6 @@ if [ ! -z "$GIT" ] && [ -x "$GIT" ]; then
 	$GIT config --global user.name "samktan"
 	$GIT config --global user.email "samktan@gmail.com"
 	$GIT config --global credential.helper store
-	[ -d $HOME/commons ] && cd $HOME/commons && $GIT status
 fi
 
 # configuration settings for OCI CLI

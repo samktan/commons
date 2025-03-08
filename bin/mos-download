@@ -88,16 +88,13 @@ echo "\n"
 echo "Enter URLs one at a time and press RETURN, type Ctrl-D to exit."
 while IFS='' read inputline; do
 	# scan for lines that contain this specific URL format
-	url="" 
-	[[ $inputline =~ https://updates.oracle.com/Orion/Services/download/[^\ \"]+ ]] && url="${BASH_REMATCH[0]}"
+	url="" && [[ $inputline =~ https://updates.oracle.com/Orion/Services/download/[^\ \"]+ ]] && url="${BASH_REMATCH[0]}"
 
 	if [ ! -z "$url" ]; then
 		# scan for a patchfile parameter
-	        patchfile="" 
-		[[ $url =~ patch_file=([^\ \&\"]+) ]] && patchfile="${BASH_REMATCH[1]}"
+	        patchfile="" && [[ $url =~ patch_file=([^\ \&\"]+) ]] && patchfile="${BASH_REMATCH[1]}"
        		# scan for a filename parameter
-        	filename=""
-		[[ $url =~ fileName=([^\ \&\"]+) ]] && filename="${BASH_REMATCH[1]}"
+        	filename="" && [[ $url =~ fileName=([^\ \&\"]+) ]] && filename="${BASH_REMATCH[1]}"
         	# if there is no patchfile parameter, use the filename parameter
         	[ -z $patchfile ] && patchfile="$filename"
 
