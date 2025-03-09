@@ -4,9 +4,9 @@
 ## MOS
 `mos [ upload | download | status ]`
 
-`upload` - upload a file to MOS for the specified SR via HTTP(S)
-`download` - download a list of URL from MOS using `wget` in parallel
-`status` - show the status of the downloads
+* `upload` - upload a file to MOS for the specified SR via HTTP(S)
+* `download` - download a list of URL from MOS using `wget` in parallel
+* `status` - show the status of the downloads
 
 
 ## SSSH
