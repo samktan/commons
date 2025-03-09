@@ -25,16 +25,21 @@ check_proxy () {
 }
 check_proxy
 
-# add common utilities
-[ -d $HOME/commons/bin ] && export PATH=$HOME/commons/bin:$PATH
-[ -x $HOME/commons/bin/sssh ] && alias ssh=$HOME/commons/bin/sssh
-
 # configure git
 GIT=$(which git)
 if [ ! -z "$GIT" ] && [ -x "$GIT" ]; then
-	$GIT config --global user.name "samktan"
-	$GIT config --global user.email "samktan@gmail.com"
-	$GIT config --global credential.helper store
+        $GIT config --global user.name "samktan"
+        $GIT config --global user.email "samktan@gmail.com"
+        $GIT config --global credential.helper store
+fi
+
+# add common utilities
+if [ -d $HOME/commons ]; then
+	export PATH=$HOME/commons/bin:$PATH
+	alias ssh=$HOME/commons/bin/sssh
+	pushd $HOME/commons
+	${GIT} pull
+	popd
 fi
 
 # configuration settings for OCI CLI
