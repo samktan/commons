@@ -1,5 +1,9 @@
 # A collection of common scripts and commands
-# by sam.k.tan@oracle.com
+by sam.k.tan@oracle.com
+
+## Installation
+In your $HOME directory, run `git clone https://github.com/samktan/commons`.
+In `.bashrc` add the line `[ -d $HOME/commons/ ] && source $HOME/commons/profile`.
 
 ## MOS
 `mos [ upload | download | status ]`
