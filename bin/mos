@@ -128,21 +128,17 @@ d () {
 case $1 in
     status)
         shift
-        PARAMS=$*
         s $*
         ;;
     upload)
         shift
-        PARAMS=$*
         u $*
         ;;
     download)
         shift
-        PARAMS=$*
         d $*
         ;;
     *)
         echo "Unknown command: $1"
-        shift
         ;;
 esac
