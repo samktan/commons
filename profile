@@ -37,13 +37,15 @@ fi
 if [ -d $HOME/commons ]; then
 	export PATH=$HOME/commons/bin:$PATH
 	alias ssh=$HOME/commons/bin/sssh
-	pushd $HOME/commons
+	CWD=$(pwd)
+	cd $HOME/commons
 	${GIT} pull
-	popd
+	cd "${CWD}"
 fi
 
 # configuration settings for OCI CLI
 # export no_proxy=".skt-pca-9.au.oracle.com,$no_proxy"
-[ -f $HOME/.oci/ca.cert ] && export OCI_CLI_CERT_BUNDLER=$HOME/.oci/ca.cert && export REQUESTS_CA_BUNDLE=$OCI_CLI_CERT_BUNDLE
+CA_ROOT_CERT="$HOME/.oci/ca.cert"
+[ -f $CA_ROOT_CERT ] && export OCI_CLI_CERT_BUNDLER=$CA_ROOT_CERT && export REQUESTS_CA_BUNDLE=$CA_ROOT_CERT
 
 
