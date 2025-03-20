@@ -18,11 +18,14 @@ $HOME/mos/mos --help
 ```
 
 # Usage
-
 `mos [ upload | download | status | verify ]`
 
 * `upload` - upload a file to MOS for the specified SR via HTTP(S)
-* `download` - download a list of URL from MOS using `wget` in parallel
+* `download` - download a list of URL from MOS using `wget` in the background
 * `status` - show the status of the downloads
+* `verify` - verify the downloaded patch files using `unzip`
 
 # Caveats
+None at present.
+
+/END
