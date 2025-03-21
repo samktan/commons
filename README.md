@@ -8,7 +8,7 @@ A simple shell script that simplifies a few tasks when working with My Oracle Su
 - verifying and unpacking patch files into folders
 
 # Background
-I do a lot of demos and I regularly rebuild and reinstall systems. I regularly download patches from MOS, create support tickets when things break, generate and upload support bundles as requested by the support engineers, so I wrote this script to help automate some of these tasks. The most useful feature here is the ability to download multiple patch files in the background and in parallel which means I can kick off the download job, logout of the session and go get coffee / tea / lunch / dinner / movie.
+I do a lot of demos and I regularly rebuild and reinstall systems. I download patches from MOS, create support tickets when things break, generate and upload support bundles as requested by the support engineers, so I wrote this script to help automate some of these tasks. The most useful feature here is the ability to download multiple patch files in the background and in parallel which means I can kick off the download job, logout of the session and go get coffee / tea / lunch / dinner / movie.
 
 # Installation
 Just clone the git repository and then run the `mos` command.
