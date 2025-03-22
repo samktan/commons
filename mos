@@ -140,5 +140,6 @@ case $1 in
         ;;
     *)
         echo "Unknown command: $1"
+	echo "${0##*/} status | upload | download"
         ;;
 esac
